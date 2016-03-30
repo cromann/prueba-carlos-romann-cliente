@@ -1,0 +1,35 @@
+Aplicación cliente para ingresar nombre de usuario y un archivo con una imagen a un web service rest.
+
+Requisitos
+----------------------
+- JDK 1.8
+
+
+Ejecución
+----------------------
+Se puede levantar la aplicación desde consola con el siguiente comando:
+
+./gradlew bootRun
+
+esto ejecutará el plugin de Spring Boot para Gradle, que levantará un servidor Tomcat con la aplicación.
+Luego de que Tomcat se inicie se puede visitar la aplicación en la siguiente URL:
+
+http://localhost:8081/rest_client
+
+
+Configuración
+----------------------
+En el directorio src/main/resources está disponible un archivo application.properties con las siguientes 
+propiedades configurables:
+
+multipart.maxFileSize: Tamaño máximo en bytes que puede tener un archivo a subir en un formulario. Por 
+defecto tiene el valor -1 para que no se valide el tamaño en el cliente. De esta forma se puede probar 
+la validación de tamaño en el servidor.
+
+server.port = Puerto en el que escuchará el tomcat de la aplicación cliente. Por defecto tiene el valor
+8081. El valor configurado debe ser distinto al configurado en la aplicación servidor.
+
+service.url = URL del servicio web rest. 
+
+
+

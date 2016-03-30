@@ -1,0 +1,23 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+	<div>
+		<form method="POST" enctype="multipart/form-data" action="/rest_client">
+			<table>
+				<tr><td>Nombre:</td><td><input type="text" name="name" /></td></tr>
+				<tr><td>Archivo:</td><td><input type="file" name="file" /></td></tr>
+				<tr><td></td><td><input type="submit" value="Enviar" /></td></tr>
+			</table>
+		</form>
+	</div>
+
+	<div th:if="${message}">
+		<h2 th:text="${message}"/>
+	</div>
+
+	<div th:if="${location}">
+		<a th:href="@{${location}}" th:text="${location}" />
+	</div>
+
+</body>
+</html>
